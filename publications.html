@@ -22,5 +22,35 @@
 	<footer>
 		<p>&copy; My Academic Website 2023</p>
 	</footer>
+	<script>
+		var xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function () {
+			if (this.readyState === 4 && this.status === 200) {
+				var bib = this.responseText;
+				var bibtexParser = new BibTex();
+				bibtexParser.content = bib;
+				bibtexParser.parse();
+javascript
+Copy code
+			var pubList = document.getElementById("publications");
+
+			for (var i = 0; i < bibtexParser.data.length; i++) {
+				var li = document.createElement("li");
+				var a = document.createElement("a");
+				a.href = "#";
+				a.textContent = bibtexParser.data[i].entryTags.title;
+				a.onclick = (function (url) {
+					return function () {
+						window.open(url);
+					};
+				})(bibtexParser.data[i].entryTags.url);
+				li.appendChild(a);
+				pubList.appendChild(li);
+			}
+		}
+	};
+	xhr.open("GET", "publications.bib");
+	xhr.send();
+</script>
 </body>
 </html>
