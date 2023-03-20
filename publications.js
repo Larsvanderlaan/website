@@ -1,19 +1,18 @@
-var publications = new BibtexParser();
-publications.setInput(`@article{my_article,
-    author = {Lars van der Laan},
-    title = {My Article},
-    journal = {Journal of Statistics},
-    year = {2023},
-    volume = {1},
-    pages = {1--10}
-}`);
+var xhr = new XMLHttpRequest();
+xhr.open('GET', 'publications.bib', true);
+xhr.onreadystatechange = function() {
+	if (this.readyState === 4 && this.status === 200) {
+		var parser = new BibtexParser();
+		parser.setInput(this.responseText);
+		parser.bibtex();
 
-publications.bibtex();
-
-var ul = document.getElementById("publications");
-for (var i = 0; i < publications.entries.length; i++) {
-	var entry = publications.entries[i];
-	var li = document.createElement("li");
-	li.innerHTML = entry.entryTags.title + ". " + entry.entryTags.journal + ", " + entry.entryTags.year;
-	ul.appendChild(li);
-}
+		var ul = document.getElementById("publications");
+		for (var i = 0; i < parser.entries.length; i++) {
+			var entry = parser.entries[i];
+			var li = document.createElement("li");
+			li.innerHTML = entry.entryTags.title + ". " + entry.entryTags.journal + ", " + entry.entryTags.year;
+			ul.appendChild(li);
+		}
+	}
+};
+xhr.send();
