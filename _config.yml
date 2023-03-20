@@ -1,0 +1,8 @@
+title: Lars van der Laan
+description: Ph.D. Student in Statistics, University of Washington
+baseurl: "/"
+
+theme: jekyll-theme-slate
+
+plugins:
+  - jekyll-scholar
