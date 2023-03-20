@@ -1,56 +1,37 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>Publications</title>
-	<script src="https://cdn.jsdelivr.net/npm/bibtex-js/dist/bibtex.min.js"></script>
-	<script src="publications.js"></script>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title>Publications</title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2113.2">
+  <style type="text/css">
+    span.s1 {font-kerning: none}
+  </style>
 </head>
 <body>
-	<header>
-		<h1>My Academic Website</h1>
-	</header>
-	<nav>
-		<a href="index.html">Home</a>
-		<a href="publications.html">Publications</a>
-		<a href="cv.html">CV</a>
-	</nav>
-	<main>
-		<h1>Publications</h1>
-		<ul id="publications"></ul>
-	</main>
-	<footer>
-		<p>&copy; My Academic Website 2023</p>
-	</footer>
-	<script>
-		var xhr = new XMLHttpRequest();
-		xhr.onreadystatechange = function () {
-			if (this.readyState === 4 && this.status === 200) {
-				var bib = this.responseText;
-				var bibtexParser = new BibTex();
-				bibtexParser.content = bib;
-				bibtexParser.parse();
-javascript
-Copy code
-			var pubList = document.getElementById("publications");
-
-			for (var i = 0; i < bibtexParser.data.length; i++) {
-				var li = document.createElement("li");
-				var a = document.createElement("a");
-				a.href = "#";
-				a.textContent = bibtexParser.data[i].entryTags.title;
-				a.onclick = (function (url) {
-					return function () {
-						window.open(url);
-					};
-				})(bibtexParser.data[i].entryTags.url);
-				li.appendChild(a);
-				pubList.appendChild(li);
-			}
-		}
-	};
-	xhr.open("GET", "publications.bib");
-	xhr.send();
-</script>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>---</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>layout: default</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>title: Publications</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>nav_order: 2</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>---</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000; min-height: 29.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;div class="page-header"&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;h2&gt;Publications&lt;/h2&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;/div&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000; min-height: 29.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;div class="page-content"&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;ul&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>{% bibliography --file _data/publications.bib %}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;/ul&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;/div&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000; min-height: 29.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;div class="page-links"&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;ul&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;li&gt;&lt;a href="{{ '/' | relative_url }}"&gt;Home&lt;/a&gt;&lt;/li&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;li&gt;&lt;a href="{{ '/cv' | relative_url }}"&gt;CV&lt;/a&gt;&lt;/li&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;/ul&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 16.1px 0.0px; font: 24.0px Times; color: #000000; -webkit-text-stroke: #000000"><span class="s1"><b>&lt;/div&gt;</b></span></h1>
 </body>
 </html>
