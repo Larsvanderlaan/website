@@ -20,16 +20,7 @@ nav_order: 1
   </div>
 </header>
 
-<!-- Navigation Section -->
-<nav>
-  <ul>
-    <li><a href="{{ '/publications' | relative_url }}">Publications</a></li>
-    <li><a href="{{ '/research' | relative_url }}">Research</a></li>
-    <li><a href="{{ '/teaching' | relative_url }}">Teaching</a></li>
-    <li><a href="{{ '/cv' | relative_url }}">CV</a></li>
-    <li><a href="{{ '/contact' | relative_url }}">Contact</a></li>
-  </ul>
-</nav>
+ 
 
 <!-- About Me Section -->
 <section class="page-section" id="about-me">
@@ -64,18 +55,4 @@ nav_order: 1
     </div>
   </div>
 </section>
-
-<!-- Teaching Section -->
-<section class="page-section" id="teaching">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-12 text-center">
-        <h2>Teaching</h2>
-        <hr class="my-4">
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-md-8 offset-md-2 text-center">
-        <p class="lead">I have served as a teaching assistant for several courses in the Department of Statistics, including STAT 302 (Introduction to Probability) and STAT 341 (Applied Probability).</p>
-      </div>
-    </
+ 
