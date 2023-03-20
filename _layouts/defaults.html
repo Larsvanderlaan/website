@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    <link rel="stylesheet" type="text/css" href="{{ '/assets/css/style.css' | relative_url }}">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  </head>
-  <body>
-    <nav>
-      <ul>
-        <li><a href="{{ '/index.html' | relative_url }}">Home</a></li>
-        <li><a href="{{ '/publications.html' | relative_url }}">Publications</a></li>
-        <li><a href="{{ '/cv.html' | relative_url }}">CV</a></li>
-      </ul>
-    </nav>
-    <main>
-      {{ content }}
-    </main>
-  </body>
+<head>
+	<meta charset="UTF-8">
+	<title>{{ page.title }}</title>
+	<link rel="stylesheet" type="text/css" href="{{ "/assets/css/style.css" | relative_url }}">
+</head>
+<body>
+	<header>
+		<h1>My Academic Website</h1>
+	</header>
+	<nav>
+		<ul>
+			<li><a href="{{ "/" | relative_url }}">Home</a></li>
+			<li><a href="{{ "/publications" | relative_url }}">Publications</a></li>
+			<li><a href="{{ "/cv" | relative_url }}">CV</a></li>
+		</ul>
+	</nav>
+	<main>
+		{{ content }}
+	</main>
+	<footer>
+		<p>&copy; My Academic Website 2023</p>
+	</footer>
+</body>
 </html>
