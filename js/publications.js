@@ -1,5 +1,5 @@
 var xhr = new XMLHttpRequest();
-xhr.open('GET', 'publications.bib', true);
+xhr.open('GET', '_data/publications.bib', true);
 xhr.onreadystatechange = function() {
 	if (this.readyState === 4 && this.status === 200) {
 		var parser = new BibtexParser();
